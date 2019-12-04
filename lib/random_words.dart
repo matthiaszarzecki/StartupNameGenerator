@@ -58,21 +58,22 @@ class RandomWordsState extends State<RandomWords> {
 
   Widget _buildSuggestions() {
     return ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemBuilder: (BuildContext _context, int i) {
-          // Add a one-pixel-high divider widget before each row in the ListView.
-          if (i.isOdd) {
-            return Divider();
-          }
+      padding: const EdgeInsets.all(16),
+      itemBuilder: (_, int i) {
+        // Add a one-pixel-high divider widget before each row in the ListView.
+        if (i.isOdd) {
+          return Divider();
+        }
 
-          // The syntax "i ~/ 2" divides i by 2 and returns an integer result.nFor example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
-          final int index = i ~/ 2;
+        // The syntax "i ~/ 2" divides i by 2 and returns an integer result.nFor example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
+        final int index = i ~/ 2;
 
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-          return _buildRow(_suggestions[index]);
-        });
+        if (index >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10));
+        }
+        return _buildRow(_suggestions[index]);
+      },
+    );
   }
 
   Widget _buildRow(WordPair pair) {
@@ -87,13 +88,15 @@ class RandomWordsState extends State<RandomWords> {
         color: alreadySaved ? Colors.red : null,
       ),
       onTap: () {
-        setState(() {
-          if (alreadySaved) {
-            _savedWordPairs.remove(pair);
-          } else {
-            _savedWordPairs.add(pair);
-          }
-        });
+        setState(
+          () {
+            if (alreadySaved) {
+              _savedWordPairs.remove(pair);
+            } else {
+              _savedWordPairs.add(pair);
+            }
+          },
+        );
       },
     );
   }

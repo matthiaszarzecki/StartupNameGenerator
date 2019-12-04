@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:startup_namer/random_words.dart'; //local package
 
-void main() => runApp(MyApp());
+import 'package:startup_namer/random_words.dart';
+
+void main() {
+  return runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
