@@ -16,7 +16,7 @@ class RandomWordsState extends State<RandomWords> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Startup Name Generator &&==',
+          'Startup Name Generator',
           style: TextStyle(fontFamily: 'Fira Code'),
         ),
         actions: <Widget>[
