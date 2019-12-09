@@ -4,4 +4,4 @@
 
 A Flutter-App that creates an endless list of two-word combinations. Based on this tutorial: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1
 
-![Startup Name Generator Screenshot](media/startup_name_generator_01.jpg)
+![Startup Name Generator Screenshot](media/startup_name_generator_01.png)
