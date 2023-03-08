@@ -20,7 +20,10 @@ class RandomWordsState extends State<RandomWords> {
           style: TextStyle(fontFamily: 'Fira Code'),
         ),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+          IconButton(
+            icon: Icon(Icons.list),
+            onPressed: _pushSaved
+          ),
         ],
       ),
       body: _buildSuggestions(),
